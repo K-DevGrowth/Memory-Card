@@ -40,14 +40,18 @@ export default function Board({ getScore, getBestScore }) {
       setHistory([]);
     } else {
       getScore();
-      setHistory([...history, card]);
+      setHistory((prev) => [...prev, card]);
     }
   };
 
   return (
     <div className="board">
       {shuffledCards.map((card) => (
-        <div onClick={() => calculateScore(card)} className="card" key={card.name}>
+        <div
+          onClick={() => calculateScore(card)}
+          className="card"
+          key={card.name}
+        >
           <img src={card.image} alt={card.name} />
           <p>{card.name}</p>
         </div>

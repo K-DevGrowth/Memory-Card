@@ -7,9 +7,9 @@ export default function Game() {
 
   function getBestScore() {
     if (score > bestScore) {
-      setBestScore((prev) => Math.max(prev, score));
-      setScore(0);
+      setBestScore(score);
     }
+    setScore(0);
   }
 
   return (
